@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DevLens: Codebase Intelligence</title>
+        <link rel="stylesheet" href="style.css">
+        <base target="_blank">
+    </head>
+    <body>
+        <header id="topbar" class="hidden">
+            <div class="brand"><span class="logo-mark">&#9673;</span> DEV<span class="thin">LENS</span></div>
+            <nav id="mainnav">
+                <button class="nav-btn active" data-view="overview">Overview</button>
+                <button class="nav-btn" data-view="graph">Graph</button>
+                <button class="nav-btn" data-view="warnings">Warnings</button>
+                <button class="nav-btn" data-view="history">History</button>
+                <button class="nav-btn" id="btn-export">Export Report</button>
+                <button class="nav-btn accent" id="btn-new-project" title="Upload a different folder">&#8635; New Project</button>
+            </nav>
+            <div class="topbar-right">
+                <span class="kbd-hint">Ctrl+K &mdash; quick open</span>
+                <div class="privacy-tag">&#128274; Local &mdash; files never leave your machine</div>
+            </div>
+        </header>
+        <section id="landing">
+            <div class="scrap s1"></div><div class="scrap s2"></div>
+            <div class="scrap s3"></div><div class="scrap s4"></div><div class="scrap s5"></div>
+            <div class="landing-inner">
+                <h1 class="mega">DEV<span class="thin">LENS</span></h1>
+                <p class="tagline">Codebase Intelligence</p>
+                <p class="pitch">Understand a codebase before you touch it.</p>
+                <div class="feature-grid">
+                    <div class="feat"><span>&#8594;</span> Where the project starts</div>
+                    <div class="feat"><span>&#8594;</span> How the files connect</div>
+                    <div class="feat"><span>&#8594;</span> Which areas matter</div>
+                    <div class="feat"><span>&#8594;</span> Potential structural problems</div>
+                    <div class="feat"><span>&#8594;</span> What to inspect first</div>
+                </div>
+                <div id="dropzone">
+                    <div class="tape"></div>
+                    <p class="dz-title">Drop a project folder here</p>
+                    <p class="dz-or">&mdash; or &mdash;</p>
+                    <div class="dz-button">
+                        <button id="btn-pick-dir" class="btn primary">Select Folder</button>
+                        <button id="btn-pick-fs" class="btn ghost hidden">Open via file system API</button>
+                    </div>
+                    <p class="dz-note">No upload &bull; Local analysis &bull; Analysis, don&rsquo;t execute</p>
+                </div>
+                <input type="file" id="file-input" webkitdirectory directory multiple hidden>
+            </div>
+        </section>
+        <section id="scan-screen" class="hidden">
+            <div class="scan-box">
+                <h2 id="scan-title">Scanning...</h2>
+                <ul id="scan-stages"></ul>
+                <p class="scan-note">Each stage is real work being done on your machine.</p>
+            </div>
+        </section>
+        
+        <main id="app" class="hidden">
+            <aside id="sidebar">
+                <input type="search" id="search" placeholder="Search files... ( / )">
+                <div id="tree" class="tree"></div>
+                <div class="sidebar-foot"><span id="file-count-label"></span></div>
+            </aside>
+            <section id="content">
+                <div class="view active" id="view-overview">
+                    <div class="proj-head">
+                        <h2 id="proj-name">Project</h2>
+                        <p id="proj-type" class="proj-type"></p>
+                    </div>
+                    <div class="stat-row" id="stat-cards"></div>
+                    <div class="two-col">
+                        <div class="panel taped">
+                            <h3>&#9873; Where should I start?</h3>
+                            <ol id="start-list" class="start-list"></ol>
+                        </div>
+                        <div class="panel">
+                            <h3>Project Health <span id="health-num" class="health-num"></span></h3>
+                            <div id="health-bars"></div>
+                            <p class="panel-foot">Scored from documented rules &mdash; hover a bar for details.</p>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <h3>&#9636; Architecture</h3>
+                        <div id="arch-view"></div>
+                    </div>
+                    <div class="panel">
+                        <h3>&#128196; Manifests &amp; Docs</h3>
+                        <div id="manifest-list"></div>
+                    </div>
+                </div>
+                
+                <div class="view" id="view-graph">
+                    <div class="graph-toolbar">
+                        <input type="search" id="graph-search" placeholder="Highlight files in graph...">
+                        <button class="btn gost small" id="btn-reset-graph">Reset view</button>
+                        <button class="btn ghost small" id="btn-trace-mode">Trace: off</button>
+                        <label class="chk"><input type="checkbox" id="chk-external"> show external deps</label>
+                    </div>
+                    <div id="graph-wrap">
+                        <svg id="graph" xmlns="http://www.w3.org/2000/svg"></svg>
+                        <div id="graph-empty" class="empty-note hidden">No internal dependencies found.</div>
+                    </div>
+                    <p class="hint">Drag to pan &bull; Scroll to zoom &bull; Click a node to view its details &bull; Shift-click (or trace mode) to highllight everything a file affects</p>
+                </div>
+
+                <div class="view" id="view-warnings">
+                    <div id="warnings-list"></div>
+                </div>
+                <div class="view" id="view-history">
+                    <div class="panel">
+                        <h3>&#9202; Project History</h3>
+                        <div id="git-summary"></div>
+                    </div>
+                    <div id="commit-list"></div>
+                </div>
+            </section>
+            <aside id="inspector" class="hidden">
+                <button id="insp-close" title="Close (Esc)">&times;</button>
+                <div id="insp-body"></div>
+            </aside>
+        </main>
+
+        <div id="palette" class="hidden">
+            <div class="palette-card">
+                <input type="text" id="palette-input" placeholder="Jump to a file...">
+                <div id="palette-results"></div>
+                <div class="palette-foot"><span class="kbd">&#8593;&#8595;</span>navigate &nbsp;<span class="kbd">&#8629;</span>open &nbsp;<span class="kbd">esc</span> close</div>
+            </div>
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>
