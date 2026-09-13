@@ -1,0 +1,64 @@
+:root{
+    --desk: #efe7d3;
+    --sheet: #fdfaf1;
+    --sheet2: #f7f0dd;
+    --kraft: #e6d9bc;
+    --edge: #ddd0b1;
+    --ink: #43392b;
+    --ink-soft: #857a63;
+    --pencil: #b3a686;
+    --blue: #aecbe4;
+    --blue-deep: #5c86ad;
+    --mint: #b9d9c2;
+    --mint-deep: #5a9271;
+    --peach: #f1cda9;
+    --peach-deep: #c07e46;
+    --rose: #e9bab3;
+    --rose-deep: #b26058;
+    --lav: #d3c4e3;
+    --lav-deep: #8a72ad;
+    --butter: #efdfab;
+    --buter-deep: #a9883a;
+    --stamp-shadow: 3px 3px 0 rgba(110, 92, 58, .16);
+    --stamp-shadow-sm: 2px 2px 0 rgba(110, 92, 58, .13);
+    --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospape;
+    --serif: Gorgia, "Iowan Old Style", "Palatino Linotype", serif;
+    --sans: -apple-system, "Segoe UI", "Avenir Next", "Trebuchet MS", sans-serif;
+}
+*{margin: 0; padding: 0; box-sizing: border-box; }
+html, body{height:100%}
+body{
+    background: var(--desk);
+    color: var(--ink);
+    font-family: var(--sans);
+    overflow: hidden;
+    background-image: 
+    radial-gradient(ellipse 800px 500px at 12% -5%, rgba(174,2203,228,.25), transparent),
+    radial-gradient(ellipse 800px 500px at 95% 105%, rgba(211,196,227,.22), transparent);
+}
+.hidden{display: none !important;}
+.thin{font-weight: 300; opacity: .65; }
+::selection{background: var(--butter);}
+
+#topbar{
+    height:56px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0, 20px;
+    background: var(--sheet);
+    border-bottom: 1.5px solid var(--edge);
+    box-shadow: 0 2px 0  rgba(110, 92, 58, .07);
+}
+.brand{
+    font-family:var(--serif);
+    font-weight: 700;
+    letter-spacing: 2px; font-size: 17px;
+}
+.logo-mark{
+    color: var(--blue-deep);
+    margin-right:5px;
+}
+#mainnav{
+    
+}
