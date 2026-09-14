@@ -60,5 +60,50 @@ body{
     margin-right:5px;
 }
 #mainnav{
-    
+    display: flex;
+    gap: 5px;
+}
+.nav-btn{
+    background: none;
+    border: none;
+    color: var(--ink-soft);
+    font-family: var(--sans);
+    font-size: 13px;
+    padding: 7px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all .12s;
+}
+.nav-btn:hover{
+    color: var(--ink);
+    background: var(--kraft);
+    transform: translateY(-1px);
+}
+.nac-btn:active{
+    color: var(--ink);
+    background: var(--butter);
+    box-shadow: var(--stamp-shadow-sm);
+    font-weight: 700;
+}
+.topbar-right{
+    margin-left: auto;
+    display: flex;
+    align-items:center;
+    gap:14px;
+}
+.kbd-hint{
+    font-size: 11px;
+    color: var(--ink-soft);
+    font-family: var(--mono);
+    opacity: .8;
+}
+.privacy-tag{
+    font-size: 11px;
+    color: var(--mint-deep);
+    font-family: var(--mono);
+    background: var(--sheet2);
+    border: 1.5px dashed var(--pencil);
+    padding: 5px 11px;
+    border-radius: 7px;
+    box-shadow: var(--stamp-shadow-sm);
 }
