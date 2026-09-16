@@ -8,7 +8,7 @@
         <base target="_blank">
     </head>
     <body>
-        <header id="topbar" class="hidden">
+        <header id="topbar">
             <div class="brand"><span class="logo-mark">&#9673;</span> DEV<span class="thin">LENS</span></div>
             <nav id="mainnav">
                 <button class="nav-btn active" data-view="overview">Overview</button>
@@ -23,7 +23,7 @@
                 <div class="privacy-tag">&#128274; Local &mdash; files never leave your machine</div>
             </div>
         </header>
-        <section id="landing">
+        <section id="landing" class="hidden">
             <div class="scrap s1"></div><div class="scrap s2"></div>
             <div class="scrap s3"></div><div class="scrap s4"></div><div class="scrap s5"></div>
             <div class="landing-inner">
@@ -59,7 +59,7 @@
             </div>
         </section>
         
-        <main id="app" class="hidden">
+        <main id="app">
             <aside id="sidebar">
                 <input type="search" id="search" placeholder="Search files... ( / )">
                 <div id="tree" class="tree"></div>
@@ -78,16 +78,19 @@
                             <ol id="start-list" class="start-list"></ol>
                         </div>
                         <div class="panel">
+                            <div class="tape3"></div>
                             <h3>Project Health <span id="health-num" class="health-num"></span></h3>
                             <div id="health-bars"></div>
-                            <p class="panel-foot">Scored from documented rules &mdash; hover a bar for details.</p>
+                            <p class="panel-foot">Scored from documented rules &colon; hover a bar for details.</p>
                         </div>
                     </div>
                     <div class="panel">
+                        <div class="tape4"></div>
                         <h3>&#9636; Architecture</h3>
                         <div id="arch-view"></div>
                     </div>
                     <div class="panel">
+                        <div class="tape5"></div>
                         <h3>&#128196; Manifests &amp; Docs</h3>
                         <div id="manifest-list"></div>
                     </div>
@@ -96,7 +99,7 @@
                 <div class="view" id="view-graph">
                     <div class="graph-toolbar">
                         <input type="search" id="graph-search" placeholder="Highlight files in graph...">
-                        <button class="btn gost small" id="btn-reset-graph">Reset view</button>
+                        <button class="btn ghost small" id="btn-reset-graph">Reset view</button>
                         <button class="btn ghost small" id="btn-trace-mode">Trace: off</button>
                         <label class="chk"><input type="checkbox" id="chk-external"> show external deps</label>
                     </div>
