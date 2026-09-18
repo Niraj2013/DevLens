@@ -981,3 +981,105 @@ body{
     text-align: center; 
     font-size: 14px; 
 }
+#git-summary { 
+    font-family: var(--mono); 
+    font-size: 12.5px; 
+    color: var(--ink-soft); 
+    line-height: 1.8; 
+} 
+#git-summary b { 
+    color: var(--ink); 
+} 
+.git-note { 
+    margin-top: 8px; 
+    font-size: 11px; 
+    color: var(--peach-deep); 
+    font-style: italic; 
+} 
+.commit {   
+    background: var(--sheet); 
+    border: 1.5px solid var(--edge);   
+    border-radius: 10px 10px 10px 4px; 
+    margin-bottom: 0; 
+    position: relative;   
+    padding: 13px 18px 13px 42px; 
+    cursor: pointer; box-shadow: none;   
+    border-bottom: none; 
+} 
+.commit:last-child { 
+    border-bottom: 1.5px solid var(--edge); 
+    box-shadow: var(--stamp-shadow-sm); 
+    border-radius: 0 0 10px 4px; 
+    margin-bottom: 14px; 
+} 
+.commit:first-child { 
+    border-radius: 10px 10px 0 0; 
+} 
+.commit::before {   
+    content: ""; 
+    position: absolute; 
+    left: 17px; 
+    top: 18px;   
+    width: 9px; 
+    height: 9px; 
+    border-radius: 50%; 
+    background: var(--blue);   
+    border: 1.5px solid var(--blue-deep); 
+} 
+.commit::after {   
+    content: ""; 
+    position: absolute; 
+    left: 21px; 
+    top: 30px; 
+    bottom: -14px;   
+    width: 1.5px; 
+    background: var(--edge); 
+} 
+.commit:last-child::after { 
+    display: none; 
+} 
+.commit:hover { 
+    background: var(--sheet2); 
+} 
+.commit .c-msg { 
+    font-weight: 600; 
+    font-size: 13.5px; 
+} 
+.commit .c-meta { 
+    font-family: var(--mono); 
+    font-size: 11px; 
+    color: var(--ink-soft); 
+    margin-top: 3px; 
+} 
+.commit .c-files { 
+    display: none; 
+    margin-top: 10px; 
+    font-family: var(--mono); 
+    font-size: 11.5px; 
+    flex-wrap: wrap; 
+    gap: 6px; 
+} 
+.commit.open 
+.c-files { 
+    display: flex; 
+} 
+.fchip {   
+    padding: 2px 9px; 
+    border-radius: 6px 6px 6px 2px; 
+    cursor: pointer;   
+    border: 1px solid transparent; 
+} 
+.fchip:hover { 
+    filter: brightness(.95); 
+} .fchip.add { 
+    background: var(--mint); 
+    color: #2c5941; 
+} 
+.fchip.del { 
+    background: var(--rose); 
+    color: #6d332d; 
+    text-decoration: line-through; } 
+.fchip.mod { 
+    background: var(--butter); 
+    color: #6d5620;
+}
