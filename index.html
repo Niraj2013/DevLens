@@ -8,7 +8,7 @@
         <base target="_blank">
     </head>
     <body>
-        <header id="topbar">
+        <header id="topbar" class="hidden">
             <div class="brand"><span class="logo-mark">&#9673;</span> DEV<span class="thin">LENS</span></div>
             <nav id="mainnav">
                 <button class="nav-btn active" data-view="overview">Overview</button>
@@ -23,7 +23,7 @@
                 <div class="privacy-tag">&#128274; Local &mdash; files never leave your machine</div>
             </div>
         </header>
-        <section id="landing" class="hidden">
+        <section id="landing">
             <div class="scrap s1"></div><div class="scrap s2"></div>
             <div class="scrap s3"></div><div class="scrap s4"></div><div class="scrap s5"></div>
             <div class="landing-inner">
@@ -59,14 +59,14 @@
             </div>
         </section>
         
-        <main id="app">
+        <main id="app" class="hidden">
             <aside id="sidebar">
                 <input type="search" id="search" placeholder="Search files... ( / )">
                 <div id="tree" class="tree"></div>
                 <div class="sidebar-foot"><span id="file-count-label"></span></div>
             </aside>
             <section id="content">
-                <div class="view" id="view-overview">
+                <div class="view active" id="view-overview">
                     <div class="proj-head">
                         <h2 id="proj-name">Project</h2>
                         <p id="proj-type" class="proj-type"></p>
@@ -113,7 +113,7 @@
                 <div class="view" id="view-warnings">
                     <div id="warnings-list"></div>
                 </div>
-                <div class="view active" id="view-history">
+                <div class="view" id="view-history">
                     <div class="panel">
                         <h3>&#9202; Project History</h3>
                         <div id="git-summary"></div>
