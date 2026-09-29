@@ -436,7 +436,7 @@ body{
 }
 #app{
     display: flex;
-    height: calc(100vh-56px);
+    height: calc(100vh - 56px);
 }
 #sidebar{
     width: 285px;
@@ -561,7 +561,7 @@ body{
     font-size: 12.5px;
     margin-top: 5px;
 }
-.stt-row{
+.stat-row{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
     gap: 13px;
@@ -1357,15 +1357,15 @@ body{
     font-size: 10px;
     box-shadow: 1px 1px 0 rgba(110,92,58,.2);
 }
-::-webkit-scrollbar{
-    width: 12px;
-    height: 12px;
+::-webkit-scrollbar { 
+    width: 12px; 
+    height: 12px; 
 }
-::-webkit-scrollbar-thumb{
-    background: var(--kraft);
-    border-radius: 7px;
-    border: 3px solid var(--desk);
+::-webkit-scrollbar-thumb { 
+    background: var(--kraft); 
+    border-radius: 7px; 
+    border: 3px solid var(--desk); 
 }
-::-webkit-scrollbar-track{
-    background: transparent;
+::-webkit-scrollbar-track { 
+    background: transparent; 
 }
