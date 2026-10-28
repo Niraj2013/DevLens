@@ -3,54 +3,8 @@ Just upload any project folder and it analysis it and gives you a complete info 
 it gives:
 1. Project Health: which shows about how well is the documentation, structure, dependencies, complexity, etc;,
 2. starting: From which file or inner folder to start, means like if it is about a frontend or a website code folder then the starting point will be main html file.
-3. Architecture: it is like a blueprint where which shows what is the content of folders like which file does the folder has, etc. example:
-├─ PAGE (127)
-── stardance-main/stardance-main/db/migrate — 40 files
-── stardance-main/stardance-main/app/assets/stylesheets/pages/shop — 16 files
-── stardance-main/stardance-main/app/assets/stylesheets/pages/admin — 15 files
-── stardance-main/stardance-main/app/assets/stylesheets/pages — 12 files
-── stardance-main/stardance-main/app/assets/stylesheets/pages/certification — 5 files
-── stardance-main/stardance-main/app/assets/stylesheets/pages/projects — 5 files
-├─ COMPONENT (101)
-── stardance-main/stardance-main/app/assets/stylesheets/components — 52 files
-── stardance-main/stardance-main/app/components — 20 files
-── stardance-main/stardance-main/app/components/discover_rail — 18 files
-── stardance-main/stardance-main/app/components/onboarding — 3 files
-── stardance-main/stardance-main/app/components/posts — 2 files
-── stardance-main/stardance-main/app/components/admin/certification — 1 file
-
-4. Manifests and Docs: something like this:
-✓
-package.json
-○
-requirements.txt
-○
-pyproject.toml
-○
-Cargo.toml
-○
-go.mod
-○
-pom.xml
-○
-composer.json
-✓
-Gemfile
-✓
-Dockerfile
-○
-Makefile
-○
-tsconfig.json
-○
-vite.config.js
-○
-webpack.config.js
-○
-.gitignore
-✓
-readme_image_controller.js — documentation found
-
+3. Architecture: it is like a blueprint where which shows what is the content of folders like which file does the folder has, etc. 
+4. Manifests and Docs
 5. Graph: it is like a detailed blue print which shows the connection between each file even if it is in secondary folder; it analysis the data of each file and identifies the connection and then in a way of graph it shows that, for example:
    <img width="1376" height="756" alt="Screenshot 2026-09-29 at 3 15 26 PM" src="https://github.com/user-attachments/assets/f14ea584-4f5a-4b7c-86a3-d7141fe1e82d" />
 
